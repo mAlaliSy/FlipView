@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="FlipView">
+        <attr name="enableHorizontalSwiping" format="boolean" />
+        <attr name="enableVerticalSwiping" format="boolean" />
+
+        <attr name="flippingDuration" format="integer" />
+        <attr name="horizontalFlippingDuration" format="integer" />
+        <attr name="verticalFlippingDuration" format="integer" />
+
+        <attr name="minSwipingDistance" format="dimension" />
+        <attr name="minHorizontalSwipingDistance" format="dimension" />
+        <attr name="minVerticalSwipingDistance" format="dimension" />
+
+    </declare-styleable>
+
+</resources>
