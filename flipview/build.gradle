@@ -19,6 +19,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+
+    lintOptions {
+        abortOnError false
+    }
+
 }
 
 dependencies {
@@ -31,29 +37,14 @@ dependencies {
 }
 
 
-ext {
-
-    bintrayRepo = 'FlipView'
-    bintrayName = 'FlipView'
-
-    publishedGroupId = 'com.malalisy.flipview'
-    libraryName = 'FlipView'
-    artifact = 'flipview'
-
-    libraryDescription = 'Simple, easy and customizable FlipView'
-
-    siteUrl = 'https://github.com/mAlaliSy/FlipView'
-    gitUrl = 'https://github.com/mAlaliSy/FlipView.git'
-
-    libraryVersion = '1.0.0'
-
-    developerId = 'malalisy'
-    developerName = 'Mohammad AL-Ali'
-    developerEmail = 'm.alali.sy@gmail.com'
-    organization = 'malalisy'
-
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
+apply plugin: 'com.novoda.bintray-release'
+publish {
+    userOrg = 'malalisy'
+    groupId = 'com.malalisy.flipview'
+    artifactId = 'flipview'
+    uploadName = 'FlipView'
+    publishVersion = '1.0.0'
+    desc = 'Simple, easy and customizable FlipView'
+    dryRun = false
+    website = 'https://github.com/mAlaliSy/FlipView'
 }
-
