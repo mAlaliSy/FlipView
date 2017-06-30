@@ -67,6 +67,9 @@ public class FlipView extends FrameLayout {
     // Minimum swiping distance to flip
     protected int minHorizontalSwipingDistance, minVerticalSwipingDistance;
 
+
+    protected OnFlipListener onFLipListener;
+
     public FlipView(@NonNull Context context) {
         super(context);
         init(null);
@@ -310,6 +313,8 @@ public class FlipView extends FrameLayout {
 
             @Override
             public void onAnimationEnd(Animator animation) {
+                if (onFLipListener != null)
+                    onFLipListener.onFlipped();
                 flipping = false;
             }
 
@@ -487,6 +492,18 @@ public class FlipView extends FrameLayout {
 
     public void setMinVerticalSwipingDistance(int minVerticalSwipingDistance) {
         this.minVerticalSwipingDistance = minVerticalSwipingDistance;
+    }
+
+    public OnFlipListener getOnFLipListener() {
+        return onFLipListener;
+    }
+
+    public void setOnFLipListener(OnFlipListener onFLipListener) {
+        this.onFLipListener = onFLipListener;
+    }
+
+    public interface OnFlipListener {
+        void onFlipped();
     }
 
 }

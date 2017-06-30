@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import com.malalisy.flipview.FlipView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener, FlipView.OnFlipListener {
 
     FlipView flipView;
     Button btnTop, btnBottom, btnLeft, btnRight;
@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void init() {
         flipView = (FlipView) findViewById(R.id.flipView);
+
+        flipView.setOnFLipListener(this);
 
         btnTop = (Button) findViewById(R.id.btnTop);
         btnBottom = (Button) findViewById(R.id.btnBottom);
@@ -129,5 +131,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 flipView.setVerticalSwiping(isChecked);
                 break;
         }
+    }
+
+    @Override
+    public void onFlipped() {
+        Toast.makeText(this, "FlipView flipped", Toast.LENGTH_SHORT).show();
     }
 }

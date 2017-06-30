@@ -43,7 +43,7 @@ publish {
     groupId = 'com.malalisy.flipview'
     artifactId = 'flipview'
     uploadName = 'FlipView'
-    publishVersion = '1.0.0'
+    publishVersion = '1.0.1'
     desc = 'Simple, easy and customizable FlipView'
     dryRun = false
     website = 'https://github.com/mAlaliSy/FlipView'
